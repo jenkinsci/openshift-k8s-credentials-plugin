@@ -1,1 +1,5 @@
-buildPlugin(failFast:false, findbugs: [archive: true])
+/*
+ See the documentation for more options:
+ https://github.com/jenkins-infra/pipeline-library/
+*/
+buildPlugin(useContainerAgent: true)
