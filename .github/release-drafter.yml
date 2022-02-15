@@ -1,0 +1,2 @@
+_extends: .github
+tag-template: openshift-token-kubernetes-credentials-$NEXT_MINOR_VERSION
