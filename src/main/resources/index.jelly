@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+    Integrates Openshift token credential type from the openshift-client-plugin with the k8s credential provider.
+</div>
