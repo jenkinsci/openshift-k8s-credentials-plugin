@@ -1,6 +1,8 @@
 # openshift-k8s-credentials
 
-[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fopenshift-k8s-credentials-plugin%2Fmain)](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/)
+[![Build Status](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/badge/icon)](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/)
+[![GitHub release](https://img.shields.io/github/release/jenkinsci/openshift-k8s-credentials-plugin.svg?label=changelog)](https://github.com/jenkinsci/openshift-k8s-credentials-plugin/releases/latest)
+
 
 ## Introduction
 

@@ -31,8 +31,8 @@
         <jenkins.version>2.289.1</jenkins.version>
         <java.level>8</java.level>
     </properties>
-    <name>Openshift Token Credentials - Kubernetes Intergration</name>
-    <description>Integrates Openshift token credentials with the k8s credential provider</description>
+    <name>Openshift Token Credentials - Kubernetes Integration</name>
+    <description>Integrates Openshift token credentials with the k8s credentials provider</description>
     <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
     <licenses>
         <license>
