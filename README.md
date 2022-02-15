@@ -1,13 +1,15 @@
-# Introduction
+# openshift-token-kubernetes-credentials
+
+## Introduction
 
 This plugin provides an extension for the [kubernetes-credentials-provider-plugin](https://github.com/jenkinsci/kubernetes-credentials-provider-plugin)
 plugin, and the [openshift-client-plugin](https://github.com/jenkinsci/openshift-client-plugin) that extend the kubernetes credentials provider to create the special credential type required by the openshift-client-plugin when interacting with an openshift cluster.
 
-## Usage
+## Getting started
 
-This plugin consumes extends the kubernetes-credentials-provider-plugin to consume kubernetes secrets with a `"jenkins.io/credentials-type"` of `"openshiftToken"`. These secrets need to have a data property `"text"` that contains a base64 encoded `token` for openshift cluster.
+The plugin consume Kubernetes credentials of type 'openshiftToken'.
 
-### Example
+You will find an example bellow
 
 ```
 apiVersion: v1
@@ -23,3 +25,6 @@ metadata:
   namespace: jenkins-demo
 type: Opaque
 ```
+## LICENSE
+
+Licensed under MIT, see [LICENSE](LICENSE.md)
