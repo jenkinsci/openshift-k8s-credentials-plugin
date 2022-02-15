@@ -32,14 +32,10 @@ import io.fabric8.kubernetes.api.model.Secret;
 import io.fabric8.kubernetes.client.utils.Serialization;
 import jenkins.security.ConfidentialStore;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.ArgumentMatchers;
 import org.mockito.Mockito;
-import org.powermock.api.mockito.PowerMockito;
-import org.powermock.core.classloader.annotations.PowerMockIgnore;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 import java.io.InputStream;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -50,18 +46,19 @@ import static org.junit.Assert.fail;
  * Tests for {@link OpenshiftTokenCredentialConverter}.
  */
 @Extension
-@RunWith(PowerMockRunner.class)
-@PrepareForTest({ConfidentialStore.class, HistoricalSecrets.class})
-@PowerMockIgnore({"javax.crypto.*" })
 public class OpenshiftTokenCredentialConverterTest {
 
+    @BeforeClass
+    public static void beforeClass() {
+        Mockito.mockStatic(ConfidentialStore.class);
+        Mockito.mockStatic(HistoricalSecrets.class);
+    }
+
     @Before
-    public void mockConfidentialStore() {
-        PowerMockito.mockStatic(ConfidentialStore.class);
+    public void before() {
         ConfidentialStore csMock = Mockito.mock(ConfidentialStore.class);
         Mockito.when(ConfidentialStore.get()).thenReturn(csMock);
         Mockito.when(csMock.randomBytes(ArgumentMatchers.anyInt())).thenAnswer( it -> new byte[ (Integer)(it.getArguments()[0])] );
-        PowerMockito.mockStatic(HistoricalSecrets.class);
     }
 
     @Test
