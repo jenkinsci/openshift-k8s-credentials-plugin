@@ -33,6 +33,7 @@
     </properties>
     <name>Openshift Token Credentials - Kubernetes Intergration</name>
     <description>Integrates Openshift token credentials with the k8s credential provider</description>
+    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
     <licenses>
         <license>
             <name>MIT License</name>
