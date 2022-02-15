@@ -1,5 +1,7 @@
 # openshift-token-kubernetes-credentials
 
+[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fopenshift-token-kubernetes-credentials-plugin%2Fmain)](https://ci.jenkins.io/job/Plugins/job/openshift-token-kubernetes-credentials-plugin/job/main/)
+
 ## Introduction
 
 This plugin provides an extension for the [kubernetes-credentials-provider-plugin](https://github.com/jenkinsci/kubernetes-credentials-provider-plugin)
