@@ -1,6 +1,6 @@
-# openshift-token-kubernetes-credentials
+# openshift-k8s-credentials
 
-[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fopenshift-token-kubernetes-credentials-plugin%2Fmain)](https://ci.jenkins.io/job/Plugins/job/openshift-token-kubernetes-credentials-plugin/job/main/)
+[![Build Status](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fopenshift-k8s-credentials-plugin%2Fmain)](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/)
 
 ## Introduction
 

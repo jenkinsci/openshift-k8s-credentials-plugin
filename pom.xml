@@ -8,7 +8,7 @@
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
-    <artifactId>openshift-token-kubernetes-credentials</artifactId>
+    <artifactId>openshift-k8s-credentials</artifactId>
     <version>${changelist}</version>
     <packaging>hpi</packaging>
     <developers>
@@ -27,7 +27,7 @@
     <properties>
         <revision>0.0.1</revision>
         <changelist>999999-SNAPSHOT</changelist>
-        <gitHubRepo>jenkinsci/openshift-token-kubernetes-credentials-plugin</gitHubRepo>
+        <gitHubRepo>jenkinsci/openshift-k8s-credentials-plugin</gitHubRepo>
         <jenkins.version>2.289.1</jenkins.version>
         <java.level>8</java.level>
     </properties>
