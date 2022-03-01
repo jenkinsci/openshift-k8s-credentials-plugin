@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.34</version>
+        <version>4.37</version>
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -14,7 +14,7 @@
     <developers>
         <developer>
             <id>jonesbusy</id>
-            <name>jonesbusy</name>
+            <name>Valentin Delaye</name>
         </developer>
     </developers>
     <scm>
@@ -23,7 +23,6 @@
         <url>https://github.com/${gitHubRepo}</url>
         <tag>${scmTag}</tag>
     </scm>
-
     <properties>
         <revision>0.0.1</revision>
         <changelist>999999-SNAPSHOT</changelist>
@@ -60,7 +59,7 @@
         <dependency>
             <groupId>com.openshift.jenkins.plugins</groupId>
             <artifactId>openshift-client</artifactId>
-            <version>1.0.35</version>
+            <version>1.0.37</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
