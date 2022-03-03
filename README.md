@@ -4,7 +4,7 @@
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/openshift-k8s-credentials.svg)](https://plugins.jenkins.io/openshift-k8s-credentials)
 [![GitHub release](https://img.shields.io/github/release/jenkinsci/openshift-k8s-credentials-plugin.svg?label=changelog)](https://github.com/jenkinsci/openshift-k8s-credentials-plugin/releases/latest)
 [![GitHub license](https://img.shields.io/github/license/jenkinsci/openshift-k8s-credentials-plugin)](https://github.com/jenkinsci/openshift-k8s-credentials-plugin/blob/master/LICENSE.md)
-
+[![Jenkins Plugin Installs](https://img.shields.io/jenkins/plugin/i/openshift-k8s-credentials.svg?color=blue)](https://plugins.jenkins.io/openshift-k8s-credentials)
 
 ## Introduction
 
