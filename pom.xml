@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.40</version>
+        <version>4.42</version>
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -28,7 +28,6 @@
         <changelist>999999-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/openshift-k8s-credentials-plugin</gitHubRepo>
         <jenkins.version>2.289.1</jenkins.version>
-        <java.level>8</java.level>
     </properties>
     <name>Openshift Token Credentials - Kubernetes Integration</name>
     <description>Integrates Openshift token credentials with the k8s credentials provider</description>
