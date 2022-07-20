@@ -27,7 +27,7 @@
         <revision>0.0.1</revision>
         <changelist>999999-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/openshift-k8s-credentials-plugin</gitHubRepo>
-        <jenkins.version>2.289.1</jenkins.version>
+        <jenkins.version>2.303.3</jenkins.version>
     </properties>
     <name>Openshift Token Credentials - Kubernetes Integration</name>
     <description>Integrates Openshift token credentials with the k8s credentials provider</description>
@@ -53,7 +53,7 @@
         <dependency>
             <groupId>com.cloudbees.jenkins.plugins</groupId>
             <artifactId>kubernetes-credentials-provider</artifactId>
-            <version>0.20</version>
+            <version>0.22</version>
         </dependency>
         <dependency>
             <groupId>com.openshift.jenkins.plugins</groupId>
