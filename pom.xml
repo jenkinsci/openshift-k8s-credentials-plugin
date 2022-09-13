@@ -27,7 +27,7 @@
         <revision>0.0.1</revision>
         <changelist>999999-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/openshift-k8s-credentials-plugin</gitHubRepo>
-        <jenkins.version>2.319.3</jenkins.version>
+        <jenkins.version>2.361.1</jenkins.version>
     </properties>
     <name>Openshift Token Credentials - Kubernetes Integration</name>
     <description>Integrates Openshift token credentials with the k8s credentials provider</description>
@@ -42,7 +42,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.319.x</artifactId>
+                <artifactId>bom-2.361.x</artifactId>
                 <version>1607.va_c1576527071</version>
                 <scope>import</scope>
                 <type>pom</type>
