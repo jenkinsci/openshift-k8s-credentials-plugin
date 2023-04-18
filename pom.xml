@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.59</version>
+        <version>4.60</version>
         <relativePath />
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -26,7 +26,7 @@
     <properties>
         <changelist>999999-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/openshift-k8s-credentials-plugin</gitHubRepo>
-        <jenkins.version>2.375.4</jenkins.version>
+        <jenkins.version>2.387.2</jenkins.version>
     </properties>
     <name>Openshift Token Credentials - Kubernetes Integration</name>
     <description>Integrates Openshift token credentials with the k8s credentials provider</description>
@@ -41,7 +41,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.375.x</artifactId>
+                <artifactId>bom-2.387.x</artifactId>
                 <version>2000.v4677a_6e0ffea</version>
                 <scope>import</scope>
                 <type>pom</type>
@@ -62,11 +62,6 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-inline</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
