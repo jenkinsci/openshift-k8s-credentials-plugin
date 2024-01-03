@@ -1,6 +1,8 @@
 # openshift-k8s-credentials
 
 [![Build Status](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/badge/icon)](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/)
+[![Coverage](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/badge/icon?status=${instructionCoverage}&subject=coverage&color=${colorInstructionCoverage})](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main)
+[![LOC](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main/badge/icon?job=test&status=${lineOfCode}&subject=line%20of%20code&color=blue)](https://ci.jenkins.io/job/Plugins/job/openshift-k8s-credentials-plugin/job/main)
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/openshift-k8s-credentials.svg)](https://plugins.jenkins.io/openshift-k8s-credentials)
 [![GitHub release](https://img.shields.io/github/release/jenkinsci/openshift-k8s-credentials-plugin.svg?label=changelog)](https://github.com/jenkinsci/openshift-k8s-credentials-plugin/releases/latest)
 [![GitHub license](https://img.shields.io/github/license/jenkinsci/openshift-k8s-credentials-plugin)](https://github.com/jenkinsci/openshift-k8s-credentials-plugin/blob/master/LICENSE.md)
