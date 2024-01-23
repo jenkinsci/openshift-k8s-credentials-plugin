@@ -57,7 +57,7 @@
         <dependency>
             <groupId>com.openshift.jenkins.plugins</groupId>
             <artifactId>openshift-client</artifactId>
-            <version>1.1.0.420.v8817277c1990</version>
+            <version>1.1.0.424.v829cb_ccf8798</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
