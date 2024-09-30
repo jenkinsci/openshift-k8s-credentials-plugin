@@ -26,7 +26,7 @@
     <properties>
         <changelist>999999-SNAPSHOT</changelist>
         <gitHubRepo>jenkinsci/openshift-k8s-credentials-plugin</gitHubRepo>
-        <jenkins.version>2.452.3</jenkins.version>
+        <jenkins.version>2.462.2</jenkins.version>
     </properties>
     <name>Openshift Token Credentials - Kubernetes Integration</name>
     <description>Integrates Openshift token credentials with the k8s credentials provider</description>
