@@ -25,71 +25,86 @@ package ch.jonesbusy.jenkins.openshiftcredentialsk8s;
 
 import com.cloudbees.jenkins.plugins.kubernetes_credentials_provider.CredentialsConvertionException;
 import com.openshift.jenkins.plugins.OpenShiftTokenCredentials;
-
-import hudson.Extension;
 import hudson.util.HistoricalSecrets;
 import io.fabric8.kubernetes.api.model.Secret;
 import io.fabric8.kubernetes.client.utils.Serialization;
 import jenkins.security.ConfidentialStore;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
+import org.mockito.MockedStatic;
 import org.mockito.Mockito;
+
 import java.io.InputStream;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Tests for {@link OpenshiftTokenCredentialConverter}.
  */
-@Extension
-public class OpenshiftTokenCredentialConverterTest {
+class OpenshiftTokenCredentialConverterTest {
 
-    @BeforeClass
-    public static void beforeClass() {
-        Mockito.mockStatic(ConfidentialStore.class);
-        Mockito.mockStatic(HistoricalSecrets.class);
+    private static MockedStatic<ConfidentialStore> confidentialStore;
+    private static MockedStatic<HistoricalSecrets> historicalSecrets;
+
+    @BeforeAll
+    static void beforeAll() {
+        confidentialStore = Mockito.mockStatic(ConfidentialStore.class);
+        historicalSecrets = Mockito.mockStatic(HistoricalSecrets.class);
     }
 
-    @Before
-    public void before() {
+    @AfterAll
+    static void afterAll() {
+        confidentialStore.close();
+        historicalSecrets.close();
+    }
+
+    @BeforeEach
+    void setUp() {
         ConfidentialStore csMock = Mockito.mock(ConfidentialStore.class);
         Mockito.when(ConfidentialStore.get()).thenReturn(csMock);
-        Mockito.when(csMock.randomBytes(ArgumentMatchers.anyInt())).thenAnswer( it -> new byte[ (Integer)(it.getArguments()[0])] );
+        Mockito.when(csMock.randomBytes(ArgumentMatchers.anyInt())).thenAnswer(it -> new byte[(Integer) (it.getArguments()[0])]);
     }
 
     @Test
-    public void canConvert() throws Exception {
+    void canConvert() {
         OpenshiftTokenCredentialConverter converter = new OpenshiftTokenCredentialConverter();
         assertThat("correct registration of valid type", converter.canConvert("openshiftToken"), is(true));
         assertThat("incorrect type is rejected", converter.canConvert("something"), is(false));
     }
 
-    @Test(expected = CredentialsConvertionException.class)
-    public void failsToConvertASecretMissingText() throws Exception {
+    @Test
+    void failsToConvertASecretMissingText() {
         OpenshiftTokenCredentialConverter converter = new OpenshiftTokenCredentialConverter();
-        try (InputStream is = get("missing-text.yaml")) {
-            Secret secret = Serialization.unmarshal(is, Secret.class);
-            assertThat("The Secret was loaded correctly from disk", notNullValue());
-            converter.convert(secret);
-        }
-    }
-
-    @Test(expected = CredentialsConvertionException.class)
-    public void failsToConvertWithNonBase64EncodedText() throws Exception {
-        OpenshiftTokenCredentialConverter converter = new OpenshiftTokenCredentialConverter();
-        try (InputStream is = get("text-isnt-base64.yaml")) {
-            Secret secret = Serialization.unmarshal(is, Secret.class);
-            assertThat("The Secret was loaded correctly from disk", notNullValue());
-           converter.convert(secret);
-        }
+        assertThrows(CredentialsConvertionException.class, () -> {
+            try (InputStream is = get("missing-text.yaml")) {
+                Secret secret = Serialization.unmarshal(is, Secret.class);
+                assertThat("The Secret was loaded correctly from disk", notNullValue());
+                converter.convert(secret);
+            }
+        });
     }
 
     @Test
-    public void canConvertAValidSecret() throws Exception {
+    void failsToConvertWithNonBase64EncodedText() {
+        OpenshiftTokenCredentialConverter converter = new OpenshiftTokenCredentialConverter();
+        assertThrows(CredentialsConvertionException.class, () -> {
+            try (InputStream is = get("text-isnt-base64.yaml")) {
+                Secret secret = Serialization.unmarshal(is, Secret.class);
+                assertThat("The Secret was loaded correctly from disk", notNullValue());
+                converter.convert(secret);
+            }
+        });
+    }
+
+    @Test
+    void canConvertAValidSecret() throws Exception {
         ConfidentialStore.get();
         OpenshiftTokenCredentialConverter converter = new OpenshiftTokenCredentialConverter();
         try (InputStream is = get("valid.yaml")) {
@@ -107,9 +122,7 @@ public class OpenshiftTokenCredentialConverterTest {
 
     private static InputStream get(String resource) {
         InputStream is = OpenshiftTokenCredentialConverterTest.class.getResourceAsStream(resource);
-        if (is == null) {
-            fail("failed to load resource " + resource);
-        }
+        assertNotNull(is, "failed to load resource " + resource);
         return is;
     }
 }
