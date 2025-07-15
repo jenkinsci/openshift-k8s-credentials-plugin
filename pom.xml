@@ -52,7 +52,7 @@
         <dependency>
             <groupId>com.openshift.jenkins.plugins</groupId>
             <artifactId>openshift-client</artifactId>
-            <version>1.1.0.424.v829cb_ccf8798</version>
+            <version>1.1.0.437.v08c5053d5fe2</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
