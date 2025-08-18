@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>5.19</version>
+        <version>5.22</version>
         <relativePath/>
     </parent>
     <groupId>io.jenkins.plugins</groupId>
@@ -23,6 +23,7 @@
         <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
         <jenkins.baseline>2.504</jenkins.baseline>
         <jenkins.version>${jenkins.baseline}.2</jenkins.version>
+        <ban-junit4-imports.skip>false</ban-junit4-imports.skip>
     </properties>
     <name>Openshift Token Credentials - Kubernetes Integration</name>
     <description>Integrates Openshift token credentials with the k8s credentials provider</description>
