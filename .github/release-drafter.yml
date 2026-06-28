@@ -1,2 +1,0 @@
-_extends: .github
-tag-template: openshift-k8s-credentials-$NEXT_MINOR_VERSION
